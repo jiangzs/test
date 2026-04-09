@@ -1,3 +1,19 @@
+"""
+Fibonacci 数列计算模块。
+
+提供多种算法计算斐波那契数：
+- fibonacci_iterative: O(n) 迭代算法
+- fibonacci_fast: O(log n) 矩阵快速幂算法
+
+示例:
+    >>> from fibonacci_example import fibonacci
+    >>> fibonacci(10)
+    55
+    >>> from fibonacci_example import fibonacci_iterative
+    >>> fibonacci_iterative(10)
+    55
+"""
+
 def fibonacci_iterative(n):
     """
     使用迭代法计算第 n 个斐波那契数。
@@ -118,10 +134,17 @@ fibonacci = fibonacci_fast
 
 
 if __name__ == "__main__":
-    # 示例：计算第 10 个斐波那契数
     number = 10
-    result = fibonacci(number)
-    print(f"The {number}th Fibonacci number is: {result}")
+
+    # 计算结果
+    result_iterative = fibonacci_iterative(number)
+    result_fast = fibonacci_fast(number)
+
+    print(f"Fibonacci Example - Computing F({number})")
+    print("=" * 40)
+    print(f"Iterative O(n):  {result_iterative}")
+    print(f"Fast O(log n):   {result_fast}")
+    print(f"Default (fast):  {fibonacci(number)}")
 
     # 运行 doctest 测试
     import doctest
