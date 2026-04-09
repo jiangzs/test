@@ -40,7 +40,7 @@ def fibonacci_iterative(n):
     注意:
         使用迭代算法，时间复杂度 O(n)，空间复杂度 O(1)
     """
-    if not isinstance(n, int) or n < 0:
+    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
         raise ValueError("n must be a non-negative integer")
     a, b = 0, 1
     for _ in range(n):
@@ -117,7 +117,7 @@ def fibonacci_fast(n):
     注意:
         使用矩阵快速幂算法，时间复杂度 O(log n)，空间复杂度 O(1)
     """
-    if not isinstance(n, int) or n < 0:
+    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
         raise ValueError("n must be a non-negative integer")
 
     if n == 0:
