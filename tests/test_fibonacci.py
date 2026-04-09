@@ -89,3 +89,47 @@ class TestFibonacciConsistency:
         """测试两种算法在 0-50 范围内结果一致。"""
         for i in range(51):
             assert fibonacci_iterative(i) == fibonacci_fast(i), f"Mismatch at {i}"
+
+
+class TestFibonacciInputValidation:
+    """测试输入验证。"""
+
+    def test_boolean_true_rejected(self):
+        """测试布尔值 True 被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_iterative(True)
+
+    def test_boolean_false_rejected(self):
+        """测试布尔值 False 被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_iterative(False)
+
+    def test_float_rejected(self):
+        """测试浮点数被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_iterative(10.5)
+
+    def test_string_rejected(self):
+        """测试字符串被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_iterative("10")
+
+    def test_none_rejected(self):
+        """测试 None 被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_iterative(None)
+
+    def test_fast_boolean_true_rejected(self):
+        """测试快速算法布尔值 True 被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_fast(True)
+
+    def test_fast_boolean_false_rejected(self):
+        """测试快速算法布尔值 False 被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_fast(False)
+
+    def test_fast_float_rejected(self):
+        """测试快速算法浮点数被拒绝。"""
+        with pytest.raises(ValueError):
+            fibonacci_fast(10.5)

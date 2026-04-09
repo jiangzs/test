@@ -14,6 +14,15 @@ Fibonacci 数列计算模块。
     55
 """
 
+__all__ = ['fibonacci_iterative', 'fibonacci_fast', 'fibonacci']
+
+
+def _validate_input(n):
+    """验证输入是否为非负整数。"""
+    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
+        raise ValueError("n must be a non-negative integer")
+
+
 def fibonacci_iterative(n):
     """
     使用迭代法计算第 n 个斐波那契数。
@@ -40,16 +49,11 @@ def fibonacci_iterative(n):
     注意:
         使用迭代算法，时间复杂度 O(n)，空间复杂度 O(1)
     """
-    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
-        raise ValueError("n must be a non-negative integer")
+    _validate_input(n)
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
     return a
-
-
-# 默认使用迭代算法
-fibonacci = fibonacci_iterative
 
 
 def _matrix_multiply(a, b):
@@ -117,8 +121,7 @@ def fibonacci_fast(n):
     注意:
         使用矩阵快速幂算法，时间复杂度 O(log n)，空间复杂度 O(1)
     """
-    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
-        raise ValueError("n must be a non-negative integer")
+    _validate_input(n)
 
     if n == 0:
         return 0
