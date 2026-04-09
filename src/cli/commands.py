@@ -4,12 +4,23 @@ from cli.formatters import format_result_box, format_sequence_table, format_erro
 
 
 def get_fibonacci(n: int) -> int:
-    """计算第 n 个斐波那契数。"""
+    """
+    计算第 n 个斐波那契数（迭代实现，O(n) 时间复杂度）。
+
+    Args:
+        n: 斐波那契数列的索引 (n >= 0)
+
+    Returns:
+        第 n 个斐波那契数
+    """
     if n < 0:
         raise ValueError("n 必须是非负整数")
     if n < 2:
         return n
-    return get_fibonacci(n - 1) + get_fibonacci(n - 2)
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
 
 
 def get_fibonacci_sequence(count: int) -> list[int]:
