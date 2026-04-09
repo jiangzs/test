@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat README*)",
+      "Bash(cat *.md)",
+      "Bash(find . -name *.git -type d)",
+      "Bash(python3 fibonacci_example.py)",
+      "Bash(python3 -c \"import platform; print\\(platform.python_version\\(\\)\\)\")",
+      "Bash(python3 -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(python3 -c \"import os; print\\(os.getcwd\\(\\)\\)\")",
+      "Bash(python3 -c \"import dis; code = compile\\(''def fibonacci\\(n\\): a, b = 0, 1; return a'', ''<stdin>'', ''exec''\\); print\\(''Python bytecode compiled''\\)\")",
+      "Bash(/opt/anaconda3/bin/python3 --version)",
+      "Bash(/opt/anaconda3/bin/python3 -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(/opt/anaconda3/bin/python3 -c \"import sys; print\\(''Built-in modules only''\\)\")",
+      "Bash(/opt/anaconda3/bin/python3 -c \"import sys; print\\([m for m in sys.modules if not m.startswith\\(''_''\\)]\\)\")",
+      "Bash(/opt/anaconda3/bin/python3 -c \"import sys; sys.modules.clear\\(\\); exec\\(open\\(''fibonacci_example.py''\\).read\\(\\)\\)\")",
+      "Bash(python3 -c \"import platform; print\\(platform.python_implementation\\(\\)\\)\")",
+      "Bash(python3 -c \"import platform; print\\(platform.machine\\(\\)\\)\")",
+      "Bash(python3 -c \"import platform; print\\(''CPython'', platform.python_version\\(\\), ''on Darwin''\\)\")",
+      "Bash(python3 -c \"print\\(''Technology Stack:''\\); print\\(''- CPython 3.13.5 \\(Anaconda\\)''\\); print\\(''- Pure Python standard library''\\); print\\(''- No external dependencies''\\); print\\(''- Simple iterative algorithm''\\); print\\(''- MacOS Darwin ARM64''\\)\")",
+      "Bash(python3 -c \"print\\(''Technology:''\\); print\\(''1. CPython 3.13.5 \\(Anaconda distribution\\)''\\); print\\(''2. Pure Python standard library''\\); print\\(''3. No external packages or dependencies''\\); print\\(''4. Simple iterative algorithm implementation''\\); print\\(''5. Platform: MacOS Darwin ARM64''\\)\")",
+      "Bash(python3 -c \"print\\(''Technology:''\\); print\\(''1. Runtime: CPython 3.13.5 \\(Anaconda\\)''\\); print\\(''2. Pure Python standard library''\\); print\\(''3. No external dependencies''\\); print\\(''4. Platform: MacOS Darwin ARM64''\\)\")",
+      "Bash(python3 -c \"print\\(''''Technology:''''\\); print\\(''''1. Runtime: CPython 3.13.5 \\(Anaconda\\)''''\\); print\\(''''2. Pure Python standard library''''\\); print\\(''''3. No external dependencies''''\\); print\\(''''4. Platform: MacOS Darwin ARM64''''\\)\")",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
