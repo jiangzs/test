@@ -53,33 +53,8 @@ def calculate_sequence(count: int):
 
 def interactive_mode():
     """进入交互式计算模式。"""
-    from rich.prompt import Prompt
-    from cli.formatters import format_guide_intro
-    console = typer.Console()
-    console.print(format_guide_intro())
-    while True:
-        typer.echo("\n[bold]你想：[/bold]")
-        typer.echo("  1. 计算一个具体的斐波那契数")
-        typer.echo("  2. 查看数列的前几项")
-        typer.echo("  3. 退出")
-        choice = Prompt.ask("请选择", choices=["1", "2", "3"], default="1")
-        if choice == "1":
-            n_str = Prompt.ask("请输入 n 的值")
-            try:
-                n = int(n_str)
-                calculate_fibonacci(n)
-            except ValueError:
-                typer.echo(format_error_message("请输入有效的整数"))
-        elif choice == "2":
-            count_str = Prompt.ask("请输入要显示的项数")
-            try:
-                count = int(count_str)
-                calculate_sequence(count)
-            except ValueError:
-                typer.echo(format_error_message("请输入有效的整数"))
-        elif choice == "3":
-            typer.echo("👋 再见！")
-            break
+    from cli.interactive import run_interactive_session
+    run_interactive_session()
 
 
 def show_guide():
